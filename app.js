@@ -7,13 +7,14 @@ require("dotenv/config");
 
 app.use(cors());
 
-//import routers
+//import posts routes
 const postsRoute = require("./routes/posts");
 
 //middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// creating the /posts route
 app.use("/posts", postsRoute);
 
 //connect to db secretly with dotenv

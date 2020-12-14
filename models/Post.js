@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//define schema
 const PostSchema = mongoose.Schema({
   title: {
     type: String,
@@ -21,4 +22,5 @@ const PostSchema = mongoose.Schema({
   },
 });
 
+//export model to mongodb via mongoose
 module.exports = mongoose.model("Posts", PostSchema);
