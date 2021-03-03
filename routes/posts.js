@@ -1,3 +1,4 @@
+const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 
@@ -33,9 +34,18 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/githubwebhook", (req, res) => {
+router.post("/githubwebhook", async (req, res) => {
   console.log(req.body);
   const request = req.body;
+
+  const sendMsg = await fetch("https://md5-blog-api.herokuapp.com/posts", {
+    method: "POST",
+    body: JSON.stringify({
+      title: "from github",
+      content: "test",
+      image: "req.body.image,",
+    }),
+  });
 
   res.json({ request });
 });
