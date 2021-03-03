@@ -33,6 +33,10 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/githubwebhook", (req, res) => {
+  console.log(req.body);
+});
+
 //gets specific post by postId
 router.get("/:postId", async (req, res) => {
   try {
