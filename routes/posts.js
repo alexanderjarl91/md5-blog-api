@@ -35,6 +35,9 @@ router.post("/", async (req, res) => {
 
 router.post("/githubwebhook", (req, res) => {
   console.log(req.body);
+  const request = req.body;
+
+  res.json({ request });
 });
 
 //gets specific post by postId
