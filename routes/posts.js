@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 
 //handling post requests
 router.post("/", async (req, res) => {
-  console.log(req.body);
+  console.log("THIS IS THE BODY:", req.body);
   //new post made from the Post.js schema in models folder, values efined as req.body.whatever
   const post = new Post({
     title: req.body.title,
