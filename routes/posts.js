@@ -39,8 +39,9 @@ router.post("/githubwebhook", async (req, res) => {
   console.log(req.body);
   const request = req.body;
 
-  const sendMsg = await fetch("https://md5-blog-api.herokuapp.com/posts", {
+  fetch("https://md5-blog-api.herokuapp.com/posts", {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       title: "from github",
       content: "test",
