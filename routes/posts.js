@@ -1,6 +1,7 @@
 const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
+const fetch = require("node-fetch");
 
 //importing post schema from models folder
 const Post = require("../models/Post");
